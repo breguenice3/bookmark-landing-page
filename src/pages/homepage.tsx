@@ -1,8 +1,14 @@
 import styled from "styled-components"
 import Header from "../components/header/header"
 import BookCarousel from "../components/books-carousel/book-carousel"
+import { useState } from "react"
 
 export default function Homepage() {
+
+    const [button1Style, setButtonStyle1] = useState("")
+    const [button2Style, setButtonStyle2] = useState("")
+    const [button3Style, setButtonStyle3] = useState("")
+
     return (
         <div>
 
@@ -29,6 +35,11 @@ export default function Homepage() {
                 <div>
                     <h2>Features</h2>
                     <p>Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+                    <div>
+                        <ButtonCarousel style={{ background: `${button1Style}` }}>Simple Bookmarking</ButtonCarousel>
+                        <ButtonCarousel>Speedy Searching</ButtonCarousel>
+                        <ButtonCarousel>Easy Sharing</ButtonCarousel>
+                    </div>
                 </div>
                 <div>
                     <BookCarousel />
@@ -135,4 +146,16 @@ const FirstSectionTextContainer = styled.div`
 
 const SecondSection = styled.div`
         
+`
+
+const ButtonCarousel = styled.button`
+    background-color: transparent;
+    border: none;
+    text-decoration: underline 3px hsl(0, 94%, 66%);
+    cursor: pointer;
+    color: blue;
+
+    &:hover{
+        color: red;
+    }
 `
