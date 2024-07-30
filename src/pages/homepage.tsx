@@ -5,9 +5,38 @@ import { useState } from "react"
 
 export default function Homepage() {
 
-    const [button1Style, setButtonStyle1] = useState("")
+    const [button1Style, setButtonStyle1] = useState("black")
     const [button2Style, setButtonStyle2] = useState("")
     const [button3Style, setButtonStyle3] = useState("")
+    const [button1Line, setButtonLineStyle1] = useState("underline 4px hsl(0, 94%, 66%)")
+    const [button2Line, setButtonLineStyle2] = useState("")
+    const [button3Line, setButtonLineStyle3] = useState("")
+
+    const [pageNumber, setPageNumber] = useState(0);
+
+    function setButton(buttonNumber: number) {
+        setButtonStyle1("")
+        setButtonStyle2("")
+        setButtonStyle3("")
+        setButtonLineStyle1("")
+        setButtonLineStyle2("")
+        setButtonLineStyle3("")
+        setPageNumber(0)
+        if (buttonNumber == 1) {
+            setButtonStyle1("black")
+            setButtonLineStyle1("underline 4px hsl(0, 94%, 66%)")
+            setPageNumber(0)
+        } if (buttonNumber == 2) {
+            setButtonStyle2("black")
+            setButtonLineStyle2("underline 4px hsl(0, 94%, 66%)")
+            setPageNumber(1)
+        } if(buttonNumber == 3) {
+            setButtonStyle3("black")
+            setButtonLineStyle3("underline 4px hsl(0, 94%, 66%)")
+            setPageNumber(2)
+        }
+
+    }
 
     return (
         <div>
@@ -22,7 +51,7 @@ export default function Homepage() {
                     </p>
                     <ButtonContainer>
                         <BlueButton>Get it on Chrome</BlueButton>
-                        <GrayButton>Get it on Chrome</GrayButton>
+                        <GrayButton>Get it on Firefox</GrayButton>
                     </ButtonContainer>
                 </FirstSectionTextContainer>
 
@@ -35,14 +64,15 @@ export default function Homepage() {
                 <div>
                     <h2>Features</h2>
                     <p>Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
-                    <div>
-                        <ButtonCarousel style={{ background: `${button1Style}` }}>Simple Bookmarking</ButtonCarousel>
-                        <ButtonCarousel>Speedy Searching</ButtonCarousel>
-                        <ButtonCarousel>Easy Sharing</ButtonCarousel>
-                    </div>
+                    <ButtonsCarousel>
+                        <ButtonCarousel style={{ color: `${button1Style}`, textDecoration: `${button1Line}` }} onClick={() => { setButton(1) }}>Simple Bookmarking</ButtonCarousel>
+                        <ButtonCarousel style={{ color: `${button2Style}`, textDecoration: `${button2Line}` }} onClick={() => { setButton(2) }}>Speedy Searching</ButtonCarousel>
+                        <ButtonCarousel style={{ color: `${button3Style}`, textDecoration: `${button3Line}` }} onClick={() => { setButton(3) }}>Easy Sharing</ButtonCarousel>
+                    </ButtonsCarousel>
+                    <hr />
                 </div>
                 <div>
-                    <BookCarousel />
+                    <BookCarousel page={pageNumber} />
                 </div>
             </SecondSection>
         </div>
@@ -95,7 +125,7 @@ const FirstSection = styled.section`
     display: flex;
     justify-content: space-between;
     padding-top: 200px;
-    width: 100vw;
+    width: 100%;
 
     & h1{
         font-size: 50px;
@@ -145,17 +175,48 @@ const FirstSectionTextContainer = styled.div`
 `
 
 const SecondSection = styled.div`
-        
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 150px;
+
+    & hr{
+        margin-top: 20px;
+        margin-bottom: 40px;
+        background-color: hsla(228.74999999999994, 7.8431372549019605%, 60%, 0.123);
+        height: 2px;
+        border: none;
+    }
+
+    & h2{
+        font-size: 32px;
+        padding-bottom: 20px;
+    }
+
+    & p{
+        width: 500px;
+        color: hsl(229, 8%, 60%);
+        padding-bottom: 50px;
+    }
+`
+
+const ButtonsCarousel = styled.div`
+    display: flex;
+    justify-content: space-between;
 `
 
 const ButtonCarousel = styled.button`
     background-color: transparent;
     border: none;
-    text-decoration: underline 3px hsl(0, 94%, 66%);
+    text-underline-offset: 23px;
     cursor: pointer;
-    color: blue;
+    color: hsl(229, 8%, 60%);
+    font-size: 16px;
+    font-weight: 500;
 
     &:hover{
-        color: red;
+        color: hsl(0, 94%, 66%);
     }
 `

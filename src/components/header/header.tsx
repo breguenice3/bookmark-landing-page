@@ -24,7 +24,7 @@ const LogoBookmark = styled.div`
     background-repeat: no-repeat;
     `
 const HeaderStyle = styled.header`
-        width: 100vw;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
