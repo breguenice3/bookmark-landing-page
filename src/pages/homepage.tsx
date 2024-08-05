@@ -30,7 +30,7 @@ export default function Homepage() {
             setButtonStyle2("black")
             setButtonLineStyle2("underline 4px hsl(0, 94%, 66%)")
             setPageNumber(1)
-        } if(buttonNumber == 3) {
+        } if (buttonNumber == 3) {
             setButtonStyle3("black")
             setButtonLineStyle3("underline 4px hsl(0, 94%, 66%)")
             setPageNumber(2)
@@ -75,6 +75,26 @@ export default function Homepage() {
                     <BookCarousel page={pageNumber} />
                 </div>
             </SecondSection>
+            <ThirdSection>
+                <h2>Download the extension</h2>
+                <p>We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
+                <div>
+                    <CardExtension>
+                        <h3>Add to Chrome</h3>
+                        <ExtensionButton>Add & Install Extension</ExtensionButton>
+                    </CardExtension>
+
+                    <CardExtension>
+                        <h3>Add to Firefox</h3>
+                        <ExtensionButton>Add & Install Extension</ExtensionButton>
+                    </CardExtension>
+
+                    <CardExtension>
+                        <h3>Add to Opera</h3>
+                        <ExtensionButton>Add & Install Extension</ExtensionButton>
+                    </CardExtension>
+                </div>
+            </ThirdSection>
         </div>
     )
 }
@@ -219,4 +239,40 @@ const ButtonCarousel = styled.button`
     &:hover{
         color: hsl(0, 94%, 66%);
     }
+`
+
+const ThirdSection = styled.div`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 300px;
+
+    & p{
+        width: 500px;
+        color: hsl(229, 8%, 60%);
+        text-align: center;
+    }
+`
+
+const ExtensionButton = styled.button`
+    width: 200px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    background-color: hsl(231, 69%, 60%);
+    color: white;
+    border-radius: 5px;
+    font-weight: 400;
+
+    &:hover{
+        border: 2px solid hsl(231, 69%, 60%);
+        background-color: transparent;
+        color: hsl(231, 69%, 60%);
+    }
+`
+
+const CardExtension = styled.div`
+    width: 300px;
+    text-align: center;
 `

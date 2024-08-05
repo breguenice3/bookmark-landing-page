@@ -27,26 +27,43 @@ export default function BookCarousel(page: Props) {
 
     return (
         <CarouselContainer>
-            <img src={features[page.page].url} alt="" />
             <div>
-                <h1>{features[page.page].name}</h1>
-                <p>{features[page.page].description}</p>
-                <button>More Info</button>
+                <img
+                    src={features[page.page].url}
+                    alt=""
+                />
+                <ImgBackground />
+            </div>
+            <div>
+                <h1>
+                    {features[page.page].name}
+                </h1>
+
+                <p>
+                    {features[page.page].description}
+                </p>
+
+                <button>
+                    More Info
+                </button>
             </div>
         </CarouselContainer>
     )
 }
 
 const CarouselContainer = styled.div`
-    width: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
-    gap: 50px;
     text-align: start;
+    justify-content: space-between;
+    padding-top: 30px;
 
     & img{
         width: 500px;
-        height: 380px;
+        height: 390px;
+        position: absolute;
+        z-index: 1;
     }
 
     & h1{
@@ -67,4 +84,17 @@ const CarouselContainer = styled.div`
         color: hsl(231, 69%, 60%);
     }
     }
+`
+
+const ImgBackground = styled.div`
+    background-color: hsl(231, 69%, 60%);
+    width: 700px;
+    height: 350px;
+    position: relative;
+    right: 360px;
+    top: 150px;
+
+    border-top-right-radius: 150px;
+    border-bottom-right-radius: 150px;
+
 `
