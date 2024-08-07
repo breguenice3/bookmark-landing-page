@@ -38,6 +38,21 @@ export default function Homepage() {
 
     }
 
+    const extensions = [
+        {
+            url: "../../images/logo-chrome.svg"
+        },
+        {
+            url: "../../images/logo-firefox.svg"
+        },
+        {
+            url: "../../images/logo-opera.svg"
+        },
+        {
+            urlDot: "../../images/bg-dots.svg"
+        }
+    ]
+
     return (
         <div>
 
@@ -78,22 +93,49 @@ export default function Homepage() {
             <ThirdSection>
                 <h2>Download the extension</h2>
                 <p>We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
-                <div>
+                <CardExtensionContainer>
                     <CardExtension>
-                        <h3>Add to Chrome</h3>
-                        <ExtensionButton>Add & Install Extension</ExtensionButton>
+                        <div>
+                            <img src={extensions[0].url} alt="" />
+                        </div>
+                        <div>
+                            <h3>Add to Chrome</h3>
+                            <p>Minimum version 62</p>
+                        </div>
+                        <div>
+                            <img src={extensions[3].urlDot} alt="" />
+                            <ExtensionButton>Add & Install Extension</ExtensionButton>
+                        </div>
                     </CardExtension>
 
-                    <CardExtension>
-                        <h3>Add to Firefox</h3>
-                        <ExtensionButton>Add & Install Extension</ExtensionButton>
+                    <CardExtension style={{ marginTop: "40px" }}>
+                        <div>
+                            <img src={extensions[1].url} alt="" />
+                        </div>
+                        <div>
+                            <h3>Add to Firefox</h3>
+                            <p>Minimum version 55</p>
+                        </div>
+                        <div>
+                            <img src={extensions[3].urlDot} alt="" />
+                            <ExtensionButton>Add & Install Extension</ExtensionButton>
+                        </div>
                     </CardExtension>
 
-                    <CardExtension>
-                        <h3>Add to Opera</h3>
-                        <ExtensionButton>Add & Install Extension</ExtensionButton>
+                    <CardExtension style={{ marginTop: "80px" }}>
+                        <div>
+                            <img src={extensions[2].url} alt="" />
+                        </div>
+                        <div>
+                            <h3>Add to Opera</h3>
+                            <p>Minimum version 46</p>
+                        </div>
+                        <div>
+                            <img src={extensions[3].urlDot} alt="" />
+                            <ExtensionButton>Add & Install Extension</ExtensionButton>
+                        </div>
                     </CardExtension>
-                </div>
+                </CardExtensionContainer>
             </ThirdSection>
         </div>
     )
@@ -247,6 +289,7 @@ const ThirdSection = styled.div`
     align-items: center;
     flex-direction: column;
     margin-top: 300px;
+    margin-bottom: 300px;
 
     & p{
         width: 500px;
@@ -264,6 +307,8 @@ const ExtensionButton = styled.button`
     color: white;
     border-radius: 5px;
     font-weight: 400;
+    margin-top: 25px;
+    margin-bottom: 25px;
 
     &:hover{
         border: 2px solid hsl(231, 69%, 60%);
@@ -274,5 +319,27 @@ const ExtensionButton = styled.button`
 
 const CardExtension = styled.div`
     width: 300px;
+    height: auto;
     text-align: center;
+    box-shadow: 3px 3px 10px hsla(228.74999999999994, 7.8431372549019605%, 60%, 0.274);
+    border-radius: 15px;
+    padding-top: 50px;
+    & p{
+        width: auto;
+        padding-bottom: 35px;
+        padding-top: 10px;
+    }
+
+    & h3{
+        padding-top: 20px;
+    }
+`
+
+const CardExtensionContainer = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+    padding-top: 30px;
 `
