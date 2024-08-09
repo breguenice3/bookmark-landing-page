@@ -7,9 +7,9 @@ export default function Header() {
 
             <div>
                 <ul>
-                    <li>FEATURES</li>
-                    <li>PRICING</li>
-                    <li>CONTACT</li>
+                    <li><a href="#features">FEATURES</a></li>
+                    <li><a href="#pricing">PRICING</a></li>
+                    <li><a href="">CONTACT</a></li>
                     <button>LOGIN</button>
                 </ul>
             </div>
@@ -42,10 +42,15 @@ const HeaderStyle = styled.header`
     
             & li{
                 cursor: pointer;
-            }
 
-            & li:hover{
-                color: hsl(0, 94%, 66%);
+                & a{
+                    text-decoration: none;
+                    color: hsl(229, 8%, 60%);
+                }
+
+                & a:hover{
+                    color: hsl(0, 94%, 66%);
+                }
             }
 
             & button{

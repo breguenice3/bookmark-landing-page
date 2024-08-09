@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: "Rubik", sans-serif;
     animation: opacity 1s;
+    scroll-behavior: smooth;
 }
 
 @keyframes opacity {

@@ -8,6 +8,7 @@ export default function Homepage() {
     const [button1Style, setButtonStyle1] = useState("black")
     const [button2Style, setButtonStyle2] = useState("")
     const [button3Style, setButtonStyle3] = useState("")
+
     const [button1Line, setButtonLineStyle1] = useState("underline 4px hsl(0, 94%, 66%)")
     const [button2Line, setButtonLineStyle2] = useState("")
     const [button3Line, setButtonLineStyle3] = useState("")
@@ -75,7 +76,7 @@ export default function Homepage() {
                     </FirstSectionImage>
                 </FirstSectionImageBg>
             </FirstSection>
-            <SecondSection>
+            <SecondSection id="features">
                 <div>
                     <h2>Features</h2>
                     <p>Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
@@ -90,7 +91,7 @@ export default function Homepage() {
                     <BookCarousel page={pageNumber} />
                 </div>
             </SecondSection>
-            <ThirdSection>
+            <ThirdSection id="pricing">
                 <h2>Download the extension</h2>
                 <p>We've got more browsers in the pipeline. Please do let us know if you've got a favourite you'd like us to prioritize.</p>
                 <CardExtensionContainer>
@@ -137,6 +138,65 @@ export default function Homepage() {
                     </CardExtension>
                 </CardExtensionContainer>
             </ThirdSection>
+            <FourthSection>
+                <h2>Frequently Asked Questions</h2>
+                <p>Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
+                <div>
+                    <ul>
+                        <li>
+                            <p>
+                                <button>What is Bookmark?</button>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" style={{ transform: "rotate(180deg)" }}><path fill="none" stroke="red" stroke-width="3" d="M1 1l8 8 8-8" /></svg>
+                            </p>
+                            <p style={{ display: "none" }}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
+                                justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+                            </p>
+                            <hr />
+                        </li>
+
+                        <li>
+                            <p>
+                                How can I request a new browser?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8" /></svg>
+                            </p>
+
+                            <p style={{ display: "none" }}>
+                                Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+                                Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+                                ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
+                                Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+                            </p>
+                            <hr />
+                        </li>
+
+                        <li>
+                            <p>
+                                Is there a mobile app?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8" /></svg>
+                            </p>
+                            <p style={{ display: "none" }}>
+                                Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
+                                urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
+                                sollicitudin ex et ultricies bibendum.
+                            </p>
+                            <hr />
+                        </li>
+
+                        <li>
+                            <p>
+                                What about other Chromium browsers?
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            </p>
+                            <p style={{ display: "none" }}>
+                                Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
+                                vitae neque eget nisl gravida pellentesque non ut velit.
+                            </p>
+                            <hr />
+                        </li>
+                    </ul>
+                </div>
+            </FourthSection>
         </div>
     )
 }
@@ -342,4 +402,8 @@ const CardExtensionContainer = styled.div`
     align-items: start;
     gap: 30px;
     padding-top: 30px;
+`
+
+const FourthSection = styled.div`
+
 `
