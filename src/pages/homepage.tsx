@@ -15,6 +15,21 @@ export default function Homepage() {
 
     const [pageNumber, setPageNumber] = useState(0);
 
+    const [arrowColor1, setArrowColor1] = useState("hsl(231, 69%, 60%)")
+    const [arrowColor2, setArrowColor2] = useState("hsl(231, 69%, 60%)")
+    const [arrowColor3, setArrowColor3] = useState("hsl(231, 69%, 60%)")
+    const [arrowColor4, setArrowColor4] = useState("hsl(231, 69%, 60%)")
+
+    const [textDisplay1, setTextDisplay1] = useState("none")
+    const [textDisplay2, setTextDisplay2] = useState("none")
+    const [textDisplay3, setTextDisplay3] = useState("none")
+    const [textDisplay4, setTextDisplay4] = useState("none")
+
+    const [textTransform1, setTextTransform1] = useState("none")
+    const [textTransform2, setTextTransform2] = useState("none")
+    const [textTransform3, setTextTransform3] = useState("none")
+    const [textTransform4, setTextTransform4] = useState("none")
+
     function setButton(buttonNumber: number) {
         setButtonStyle1("")
         setButtonStyle2("")
@@ -139,16 +154,34 @@ export default function Homepage() {
                 </CardExtensionContainer>
             </ThirdSection>
             <FourthSection>
-                <h2>Frequently Asked Questions</h2>
-                <p>Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
+                <FourthSectionText>
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
+                </FourthSectionText>
                 <div>
                     <ul>
                         <li>
+                            <hr />
                             <p>
-                                <button>What is Bookmark?</button>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" style={{ transform: "rotate(180deg)" }}><path fill="none" stroke="red" stroke-width="3" d="M1 1l8 8 8-8" /></svg>
+                                <ButtonText
+                                    onClick={() => {
+                                        if (textTransform1 == "none") {
+                                            {
+                                                setTextTransform1("rotate(180deg)")
+                                                setArrowColor1("hsl(0, 94%, 66%)")
+                                                setTextDisplay1("block")
+                                            }
+                                        } if (textTransform1 == "rotate(180deg)") {
+                                            setTextTransform1("none")
+                                            setArrowColor1("hsl(231, 69%, 60%)")
+                                            setTextDisplay1("none")
+                                        }
+                                    }}
+                                >What is Bookmark?
+                                </ButtonText>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" style={{ transform: `${textTransform1}`, transitionDuration: "1s" }}><path fill="none" stroke={arrowColor1} stroke-width="3" d="M1 1l8 8 8-8" /></svg>
                             </p>
-                            <p style={{ display: "none" }}>
+                            <p style={{ display: `${textDisplay1}` }}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt
                                 justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
                             </p>
@@ -157,11 +190,26 @@ export default function Homepage() {
 
                         <li>
                             <p>
-                                How can I request a new browser?
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8" /></svg>
+                                <ButtonText
+                                    onClick={() => {
+                                        if (textTransform2 == "none") {
+                                            {
+                                                setTextTransform2("rotate(180deg)")
+                                                setArrowColor2("hsl(0, 94%, 66%)")
+                                                setTextDisplay2("block")
+                                            }
+                                        } if (textTransform2 == "rotate(180deg)") {
+                                            setTextTransform2("none")
+                                            setArrowColor2("hsl(231, 69%, 60%)")
+                                            setTextDisplay2("none")
+                                        }
+                                    }}
+                                >How can I request a new browser?
+                                </ButtonText>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" style={{ transform: `${textTransform2}` }}><path fill="none" stroke={arrowColor2} stroke-width="3" d="M1 1l8 8 8-8" /></svg>
                             </p>
 
-                            <p style={{ display: "none" }}>
+                            <p style={{ display: `${textDisplay2}` }}>
                                 Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
                                 Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
                                 ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies.
@@ -172,10 +220,25 @@ export default function Homepage() {
 
                         <li>
                             <p>
-                                Is there a mobile app?
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8" /></svg>
+                                <ButtonText
+                                    onClick={() => {
+                                        if (textTransform3 == "none") {
+                                            {
+                                                setTextTransform3("rotate(180deg)")
+                                                setArrowColor3("hsl(0, 94%, 66%)")
+                                                setTextDisplay3("block")
+                                            }
+                                        } if (textTransform3 == "rotate(180deg)") {
+                                            setTextTransform3("none")
+                                            setArrowColor3("hsl(231, 69%, 60%)")
+                                            setTextDisplay3("none")
+                                        }
+                                    }}
+                                >Is there a mobile app?
+                                </ButtonText>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" style={{ transform: `${textTransform3}` }}><path fill="none" stroke={arrowColor3} stroke-width="3" d="M1 1l8 8 8-8" /></svg>
                             </p>
-                            <p style={{ display: "none" }}>
+                            <p style={{ display: `${textDisplay3}` }}>
                                 Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum
                                 urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed
                                 sollicitudin ex et ultricies bibendum.
@@ -185,14 +248,36 @@ export default function Homepage() {
 
                         <li>
                             <p>
-                                What about other Chromium browsers?
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12"><path fill="none" stroke="#5267DF" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                                <ButtonText
+                                    onClick={() => {
+                                        if (textTransform4 == "none") {
+                                            {
+                                                setTextTransform4("rotate(180deg)")
+                                                setArrowColor4("hsl(0, 94%, 66%)")
+                                                setTextDisplay4("block")
+                                            }
+                                        } if (textTransform4 == "rotate(180deg)") {
+                                            setTextTransform4("none")
+                                            setArrowColor4("hsl(231, 69%, 60%)")
+                                            setTextDisplay4("none")
+                                        }
+                                    }}
+                                >What about other Chromium browsers?
+                                </ButtonText>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12" style={{ transform: `${textTransform4}` }}><path fill="none" stroke={arrowColor4} stroke-width="3" d="M1 1l8 8 8-8" /></svg>
                             </p>
-                            <p style={{ display: "none" }}>
+                            <p style={{
+                                display:
+                                    `${textDisplay4}`
+                            }}>
                                 Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam
                                 vitae neque eget nisl gravida pellentesque non ut velit.
                             </p>
                             <hr />
+
+                            <div>
+                                <BlueSmallButton>More Info</BlueSmallButton>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -405,5 +490,78 @@ const CardExtensionContainer = styled.div`
 `
 
 const FourthSection = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+    & ul{
+        list-style: none;
+    }
+
+    & p{
+        width: 530px;
+        text-align: start;
+        line-height: 30px;
+        color: hsl(229, 8%, 60%);
+        font-weight: 400;
+        padding-bottom: 20px;
+    }
+
+    & hr{
+        background-color: hsla(228.74999999999994, 7.8431372549019605%, 60%, 0.123);
+        height: 2px;
+        border: none;
+    }
+
+    & div{
+        display: flex;
+        justify-content: center;
+        padding-top: 45px;
+    }
+`
+
+const ButtonText = styled.button`
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    width: 500px;
+    font-weight: 500;
+    font-size: 16px;
+    padding-top: 20px;
+    text-align: start;
+
+    &:hover{
+        color: hsl(0, 94%, 66%);
+    }
+`
+
+const FourthSectionText = styled.div`
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    & h2{
+        padding-bottom: 15px;
+    }
+
+    & p{
+        text-align: center;
+        width: 450px;
+    }
+`
+
+const BlueSmallButton = styled.button`
+        background-color: hsl(231, 69%, 60%);
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: white;
+        border: 2px solid transparent;
+        cursor: pointer;
+
+        &:hover{
+            border: 2px solid hsl(231, 69%, 60%);
+            background-color: transparent;
+            color: hsl(231, 69%, 60%);
+        }
 `
