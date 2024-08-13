@@ -440,6 +440,11 @@ const ThirdSection = styled.div`
         width: 500px;
         color: hsl(229, 8%, 60%);
         text-align: center;
+        padding-bottom: 20px;
+    }
+
+    & h2{
+        padding-bottom: 20px;
     }
 `
 
@@ -517,6 +522,7 @@ const FourthSection = styled.div`
         display: flex;
         justify-content: center;
         padding-top: 45px;
+        padding-bottom: 30px;
     }
 `
 
