@@ -9,7 +9,7 @@ export default function Header() {
                 <ul>
                     <li><a href="#features">FEATURES</a></li>
                     <li><a href="#pricing">PRICING</a></li>
-                    <li><a href="">CONTACT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                     <button>LOGIN</button>
                 </ul>
             </div>
