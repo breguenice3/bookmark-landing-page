@@ -324,6 +324,10 @@ const ButtonContainer = styled.div`
     gap: 20px;
     width: auto;
     height: auto;
+
+    @media (max-width: 1024px){
+        gap: 10px;
+    }
 `
 
 const BlueButton = styled.button`
@@ -373,6 +377,13 @@ const FirstSection = styled.section`
     & p{
         color: hsl(229, 8%, 60%);
     }
+    @media (max-width: 1024px){
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+    }
 `
 
 const FirstSectionImage = styled.div`
@@ -386,6 +397,13 @@ const FirstSectionImage = styled.div`
     position: absolute;
     right: 100px;
     top: 220px;
+
+    @media (max-width: 1024px){
+        width: 350px;
+        height: 250px;
+        position: absolute;
+        right: 0px;
+}
 `
 
 const FirstSectionImageBg = styled.div`
@@ -395,6 +413,13 @@ const FirstSectionImageBg = styled.div`
 
         border-top-left-radius: 50%;
         border-bottom-left-radius: 50%;
+
+        @media (max-width: 1024px){
+            /* position: relative; */
+            /* left: 60px; */
+            width: 300px;
+            height: 300px;
+        }
 `
 
 const FirstSectionTextContainer = styled.div`
@@ -410,6 +435,23 @@ const FirstSectionTextContainer = styled.div`
 
         & p{
             width: 450px;
+        }
+
+        @media (max-width: 1024px){
+            padding-left: 0px;
+            gap: 15px;
+            height: 300px;
+
+            & h1{
+                width: 300px;
+                text-align: center;
+                font-size: 24px;
+            }
+
+            & p{
+                width: 300px;
+                text-align: center;
+            }
         }
 `
 
@@ -438,6 +480,10 @@ const SecondSection = styled.div`
         width: 500px;
         color: hsl(229, 8%, 60%);
         padding-bottom: 50px;
+    }
+
+    @media (max-width: 1024px){
+        padding-top: 0px;
     }
 `
 

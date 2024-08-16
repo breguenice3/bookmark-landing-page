@@ -68,4 +68,13 @@ const HeaderStyle = styled.header`
                 border: 2px solid hsl(0, 94%, 66%);
             }
         }
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            background-color: black;
+
+            & ul{
+                display: none;
+            }
+        }
     `
