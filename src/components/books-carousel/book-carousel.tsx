@@ -84,6 +84,32 @@ const CarouselContainer = styled.div`
         color: hsl(231, 69%, 60%);
     }
     }
+
+    @media (max-width: 1024px){
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & img{
+            width: 350px;
+            height: 250px;
+        }
+
+        & button{
+            display: none;
+        }
+
+        & h1{
+            padding-top: 70px;
+        }
+
+        & p{
+            text-align: center;
+            line-height: 25px;
+            font-size: 18px;
+        }
+    }
 `
 
 const ImgBackground = styled.div`
@@ -96,5 +122,13 @@ const ImgBackground = styled.div`
 
     border-top-right-radius: 150px;
     border-bottom-right-radius: 150px;
+
+    @media (max-width: 1024px){
+        position: relative;
+        width: 350px;
+        height: 250px;
+        right: 35px;
+        top: 42px;
+    }
 
 `

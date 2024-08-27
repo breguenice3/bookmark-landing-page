@@ -98,8 +98,11 @@ export default function Homepage() {
                     <h2>Features</h2>
                     <p>Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
                     <ButtonsCarousel>
+                        <hr />
                         <ButtonCarousel style={{ color: `${button1Style}`, textDecoration: `${button1Line}` }} onClick={() => { setButton(1) }}>Simple Bookmarking</ButtonCarousel>
+                        <hr />
                         <ButtonCarousel style={{ color: `${button2Style}`, textDecoration: `${button2Line}` }} onClick={() => { setButton(2) }}>Speedy Searching</ButtonCarousel>
+                        <hr />
                         <ButtonCarousel style={{ color: `${button3Style}`, textDecoration: `${button3Line}` }} onClick={() => { setButton(3) }}>Easy Sharing</ButtonCarousel>
                     </ButtonsCarousel>
                     <hr />
@@ -477,7 +480,7 @@ const SecondSection = styled.div`
     }
 
     & p{
-        width: 500px;
+        width: 320px;
         color: hsl(229, 8%, 60%);
         padding-bottom: 50px;
     }
@@ -490,6 +493,25 @@ const SecondSection = styled.div`
 const ButtonsCarousel = styled.div`
     display: flex;
     justify-content: space-between;
+
+    & hr{
+        display: none;
+    }   
+
+    @media (max-width: 1024px){
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        & hr{
+            display: block;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            background-color: hsla(228.74999999999994, 7.8431372549019605%, 60%, 0.123);
+            height: 2px;
+            border: none;
+        }
+    }
 `
 
 const ButtonCarousel = styled.button`
@@ -523,6 +545,17 @@ const ThirdSection = styled.div`
 
     & h2{
         padding-bottom: 20px;
+    }
+
+    @media (max-width: 1024px){
+        margin-top: 150px;
+        margin-bottom: 100px;
+        text-align: center;
+        width: 100vw;
+
+        & p{
+            width: 350px;
+        }
     }
 `
 
@@ -570,6 +603,11 @@ const CardExtensionContainer = styled.div`
     align-items: start;
     gap: 30px;
     padding-top: 30px;
+
+    @media (max-width: 1024px){
+        flex-direction: column;
+        align-items: center;
+    }
 `
 
 const FourthSection = styled.div`
@@ -602,6 +640,14 @@ const FourthSection = styled.div`
         padding-top: 45px;
         padding-bottom: 30px;
     }
+
+    @media (max-width: 1024px){
+        width: 100vw;
+
+        & p{
+            width: 320px;
+        }
+    }
 `
 
 const ButtonText = styled.button`
@@ -620,6 +666,11 @@ const ButtonText = styled.button`
     &:hover{
         color: hsl(0, 94%, 66%);
     }
+
+    @media (max-width: 1024px){
+        width: 320px;
+        font-size: 14px;
+    }
 `
 
 const FourthSectionText = styled.div`
@@ -635,6 +686,15 @@ const FourthSectionText = styled.div`
     & p{
         text-align: center;
         width: 450px;
+    }
+
+    @media (max-width: 1024px){
+        width: 100vw;
+
+        & p{
+            width: 100vw;
+            padding: 0px 25px;
+        }
     }
 `
 
