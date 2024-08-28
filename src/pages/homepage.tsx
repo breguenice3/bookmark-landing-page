@@ -72,7 +72,7 @@ export default function Homepage() {
     ]
 
     return (
-        <div>
+        <HomepageStyled>
 
             <Header />
 
@@ -95,8 +95,10 @@ export default function Homepage() {
             </FirstSection>
             <SecondSection id="features">
                 <div>
-                    <h2>Features</h2>
-                    <p>Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+                    <SecondSectionText>
+                        <h2>Features</h2>
+                        <p>Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.</p>
+                    </SecondSectionText>
                     <ButtonsCarousel>
                         <hr />
                         <ButtonCarousel style={{ color: `${button1Style}`, textDecoration: `${button1Line}` }} onClick={() => { setButton(1) }}>Simple Bookmarking</ButtonCarousel>
@@ -317,10 +319,17 @@ export default function Homepage() {
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20"><Apath fill="#FFF" fill-rule="evenodd" d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z" /></svg>
                 </IconDIv>
             </Footer>
-        </div>
+        </HomepageStyled>
     )
 }
 
+
+const HomepageStyled = styled.div`
+    width: 100%;
+
+    box-sizing: border-box;
+    overflow-x: hidden;
+`
 
 const ButtonContainer = styled.div`
     display: flex;
@@ -385,7 +394,7 @@ const FirstSection = styled.section`
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;
-        padding-top: 100px;
+        padding-top: 30px;
     }
 `
 
@@ -404,8 +413,7 @@ const FirstSectionImage = styled.div`
     @media (max-width: 1024px){
         width: 350px;
         height: 250px;
-        position: absolute;
-        right: 0px;
+        position: static;
 }
 `
 
@@ -418,10 +426,11 @@ const FirstSectionImageBg = styled.div`
         border-bottom-left-radius: 50%;
 
         @media (max-width: 1024px){
-            /* position: relative; */
-            /* left: 60px; */
-            width: 300px;
+            width: 350px;
             height: 300px;
+            border-top-left-radius: 0%;
+            border-bottom-left-radius: 0%;
+            background-color: transparent;
         }
 `
 
@@ -480,19 +489,38 @@ const SecondSection = styled.div`
     }
 
     & p{
-        width: 320px;
+        width: 400px;
         color: hsl(229, 8%, 60%);
         padding-bottom: 50px;
     }
 
     @media (max-width: 1024px){
         padding-top: 0px;
+
+    }
+`
+
+const SecondSectionText = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & p{
+        width: 470px;
+    }
+
+    @media (max-width: 1024px){
+        & p{
+            width: 320px;
+        }
     }
 `
 
 const ButtonsCarousel = styled.div`
     display: flex;
     justify-content: space-between;
+    width: 500px;
 
     & hr{
         display: none;
@@ -502,6 +530,7 @@ const ButtonsCarousel = styled.div`
         display: flex;
         flex-direction: column;
         gap: 20px;
+        width: 320px;
 
         & hr{
             display: block;
@@ -739,6 +768,21 @@ const LastSection = styled.section`
     & input{
         margin: 20px;
     }
+
+    @media (max-width: 1024px){
+
+    height: 400px;
+
+        & div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        & h3{
+            width: 300px;
+        } 
+    }
 `
 
 const RedButton = styled.button`
@@ -756,6 +800,10 @@ const RedButton = styled.button`
         background-color:  white;
         color: hsl(0, 94%, 66%);
         border: 2px solid hsl(0, 94%, 66%);
+    }
+
+    @media (max-width: 1024px){
+        width: 250px;
     }
 `
 
@@ -801,6 +849,25 @@ const Footer = styled.footer`
         }
     }
 
+    @media (max-width: 1024px){
+
+        height: auto;
+        flex-direction: column;
+
+        & div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        & ul{
+            flex-direction: column;
+            gap: 10px;
+            font-weight: 500;
+        }
+    }
+
 `
 
 const IconDIv = styled.div`
@@ -809,6 +876,11 @@ const IconDIv = styled.div`
     gap: 30px;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1024px){
+        width: 100%;
+        padding-top: 20px;
+    }
 `
 
 const Apath = styled.path`

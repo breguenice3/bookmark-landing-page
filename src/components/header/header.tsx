@@ -1,9 +1,15 @@
+import { useState } from "react"
 import styled from "styled-components"
 
 export default function Header() {
+
+    const [disp, setDisp] = useState('none')
+
     return (
         <HeaderStyle>
-            <LogoBookmark />
+            <div>
+                <LogoBookmark />
+            </div>
 
             <div>
                 <ul>
@@ -13,9 +19,31 @@ export default function Header() {
                     <button>LOGIN</button>
                 </ul>
             </div>
+            <HamburgerMenuDiv>
+                <HamburgerMenu onClick={() => {
+                    if (disp == 'none') {
+                        setDisp('block')
+                    }if(disp == 'block'){
+                        setDisp('none')
+                    }
+                }}><img src="../../images/icon-hamburger.svg" alt="" /></HamburgerMenu>
+            </HamburgerMenuDiv>
+
         </HeaderStyle>
     )
 }
+
+const HamburgerMenuDiv = styled.div`
+    display: none;
+
+    @media (max-width: 1024px) {
+        display: flex;
+    }
+`
+
+const HamburgerMenu = styled.button`
+    border: none;
+`
 
 const LogoBookmark = styled.div`
     width: 300px;
@@ -23,12 +51,14 @@ const LogoBookmark = styled.div`
     background-image: url('../../images/logo-bookmark.svg');
     background-repeat: no-repeat;
     `
+
 const HeaderStyle = styled.header`
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 60px 100px;
+        position: relative;
 
         &   ul{
             display: flex;
@@ -70,8 +100,12 @@ const HeaderStyle = styled.header`
         }
 
         @media (max-width: 1024px) {
-            width: 100%;
-            background-color: black;
+            width: 100vw;
+            /* background-color: black; */
+            display: flex;
+            justify-content: space-evenly;
+            height: 30px;
+            padding: 40px 0px;
 
             & ul{
                 display: none;

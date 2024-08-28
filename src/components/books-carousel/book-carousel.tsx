@@ -67,6 +67,7 @@ const CarouselContainer = styled.div`
     }
 
     & h1{
+        text-align: center;
         padding-bottom: 20px;
     }
 
@@ -83,7 +84,7 @@ const CarouselContainer = styled.div`
         background-color: transparent;
         color: hsl(231, 69%, 60%);
     }
-    }
+}
 
     @media (max-width: 1024px){
         width: 100vw;
@@ -117,13 +118,14 @@ const ImgBackground = styled.div`
     width: 700px;
     height: 350px;
     position: relative;
-    right: 360px;
+    right: 500px;
     top: 150px;
 
     border-top-right-radius: 150px;
     border-bottom-right-radius: 150px;
 
     @media (max-width: 1024px){
+        background-color: transparent;
         position: relative;
         width: 350px;
         height: 250px;
